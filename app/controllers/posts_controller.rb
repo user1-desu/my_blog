@@ -14,4 +14,13 @@ class PostsController < ApplicationController
     redirect_to "/posts/#{@post.id}"
   end
 
+private
+  def post_params
+    params.require(:post).permit(
+      :title,
+      :category,
+      :body
+      )
+  end
+
 end
